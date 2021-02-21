@@ -1,6 +1,6 @@
 {
   "name": "@now-ims/slugify",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Turn a string into a url friendly slug",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
