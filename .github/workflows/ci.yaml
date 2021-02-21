@@ -1,0 +1,35 @@
+name: node package
+
+on:
+  push: 
+    branches:
+      - main
+      - next
+  pull_request:
+    branches:
+      - main
+      - next
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [14, 15]
+
+    name: Now-IMS Slugify node version ${{matrix.node}}
+
+    steps:
+    - uses: actions/checkout@v2
+    #setup .npmrc file to publish to public package repo
+    - uses: actions/setup-node@v2
+      with:
+        node-version: ${{matrix.node}}
+        registry-url: 'https://registry.npmjs.org'
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+    - run: npm install
+    - run: npx semantic-release
+      if: ${{ matrix.node == 14 }}
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

@@ -8,4 +8,6 @@ const slugify = (string: string, separator = '-'): string => {
     .replace(/\s+/g, separator);
 };
 
+console.log(slugify("C'est déjà l'été."));
+
 export default slugify;
