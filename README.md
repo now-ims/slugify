@@ -1,8 +1,9 @@
 # slugify
 
 A simple package to create slugs from strings while keeping it DRY.
-![](https://github.com/now-ims/slugify/workflows/ci/badge.svg)
-![npm (scoped)](https://img.shields.io/npm/v/@now-ims/slugify?color=E55812)
+
+![CI](https://github.com/now-ims/slugify/actions/workflows/ci.yaml/badge.svg)
+![npm (scoped)](https://img.shields.io/npm/v/@now-ims/slugify?color=C64434)
 
 ## How to install
 
